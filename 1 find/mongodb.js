@@ -1,0 +1,27 @@
+db.frutas.find({color: "rojo"})
+db.frutas.find({color: {$in: ["rojo", "verde", "naranja"]}})
+db.frutas.find({"size.h": 10})
+db.frutas.find({"size.h": {$gte: 15}})
+db.frutas.find({"size.w": {$lt: 12}})
+db.frutas.find().sort({qty: 1})
+db.frutas.find().sort({"size.h": -1})
+db.frutas.find({qty: {$lt: 50}}).sort({qty: 1})
+db.frutas.find({$and: [{color: "verde"}, {qty: {$gt: 15}}]})
+db.frutas.find({$and: [{color: "verde"}, {qty: {$gt: 15}}]}).sort({qty: 1})
+db.frutas.find({$and: [{color: {$in: ["rojo", "verde"]}}, {"size.h": {$lt: 5}}]})
+db.frutas.find({$and: [{name: {$in: ["fresa", "melon", "cereza"]}}, {qty: {$lt: 80}}]})
+db.frutas.find({$and: [{name: {$in: ["fresa", "melon", "cereza"]}}, {qty: {$lt: 80}}]})
+db.frutas.find({$and: [{qty: {$gt: 50}}, {qty: {$lt: 100}}]}, {_id: 0, qty: 1, name: 1})
+db.frutas.find({qty: {$gt: 50, $lt: 100}}, {_id: 0, qty: 1, name: 1}) //otro modo mas compacto
+
+db.frutas.find(
+  {
+    $and: [
+      {qty: {$lt: 50}},
+      {"size.h": {$lte: 15}},
+      {color: {$in: ["rojo", "verde", "naranja"]}},
+    ],
+  },
+  {_id: 0, name: 1, qty: 1, color: 1}
+)
+db.frutas.find({}, {_id: 0, name: 1, qty: 1})

@@ -1,0 +1,22 @@
+.color {
+  background-color: azure;
+  font-weight: bold;
+}
+h1,
+input,
+ul,
+button {
+  margin-left: 1.4rem;
+}
+ul {
+  width: 500px;
+  height: 150px;
+  background-color: cornsilk;
+  border: black 1px solid;
+  list-style: none;
+  padding: 0px;
+}
+ul {
+  display: block;
+  overflow: hidden;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Put</title>
+    <script defer src="/js/put.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <h1 class="text-center">Search and Put pokemon</h1>
+    <form>
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Id del pokemon"
+        aria-describedby="button-addon2"
+        name="idPokemonSearch"
+        id="idPokemonSearch"
+      />
+      <button
+        onclick="searchPokemon()"
+        class="btn btn-outline-secondary"
+        type="button"
+        id="button"
+      >
+        actualizar
+      </button>
+    </form>
+
+
+    <form>
+
+      <div class="mb-3">
+        <label for="idPokemon" class="form-label">Tipo de Pokemon</label>
+        <input type="text" class="form-control" id="idPokemon" name="idPokemon" disabled/>
+      </div>
+          <div class="mb-3">
+        <label for="namePokemon" class="form-label">Tipo de Pokemon</label>
+        <input type="text" class="form-control" id="namePokemon" name="namePokemon" />
+      </div>
+          <div class="mb-3">
+        <label for="typePokemon" class="form-label">Tipo de Pokemon</label>
+        <input type="text" class="form-control" id="typePokemon" name="typePokemon" />
+      </div>
+    </div>
+    <button
+        onclick="putPokemon()"
+        class="btn btn-outline-secondary"
+        type="button"
+        id="button"
+                data-bs-toggle="modal" data-bs-target="#exampleModal"
+
+      >
+        actualizar
+      </button>
+</form>
+
+  </body>
+</html>

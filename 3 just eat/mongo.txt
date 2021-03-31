@@ -1,0 +1,7 @@
+db.restaurants.find({type_of_food: "American"}).count()
+db.restaurants.find({type_of_food: "Pizza"}).sort({Pizza:1}).limit(5)
+db.restaurants.find({"name":"2-4-1 Pizza"})
+db.restaurants.find({$and:[{type_of_food: {$in: ["Chinese","Curry","Thai"] }},{rating: {$gt: 4}}] }).sort({rating:-1})
+db.restaurants.find({$and:[{type_of_food: {$in:["American", "Pizza"]}},{postcode: "3HR"}]}).sort({rating:-1})
+db.restaurants.find([{"address line 2": {$in: ["London", "Manchester"]}}],[{$nor: [rating: ]}]).sort({rating: -1}).limit(10)
+db.restaurants.find().skip(60).limit(10)
